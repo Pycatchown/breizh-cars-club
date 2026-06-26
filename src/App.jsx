@@ -4,6 +4,7 @@ import { MAIL } from "./data/index.js";
 import Accueil from "./pages/Accueil.jsx";
 import Agenda from "./pages/Agenda.jsx";
 import Album from "./pages/Album.jsx";
+import Boutique from "./pages/Boutique.jsx";
 import Connexion from "./pages/Connexion.jsx";
 import "./styles/global.css";
 
@@ -11,6 +12,7 @@ const NAV_LINKS = [
   ["accueil", "Accueil"],
   ["agenda", "Agenda"],
   ["album", "Album"],
+  ["boutique", "Boutique"],
 ];
 
 export default function App() {
@@ -74,6 +76,7 @@ export default function App() {
         {page === "accueil"   && <Accueil go={go} />}
         {page === "agenda"    && <Agenda />}
         {page === "album"     && <Album />}
+        {page === "boutique"  && <Boutique />}
         {page === "connexion" && <Connexion mode={authMode} setMode={setAuthMode} />}
       </main>
 
@@ -97,6 +100,7 @@ export default function App() {
                 <h5>Navigation</h5>
                 <button onClick={() => go("agenda")}>Agenda</button>
                 <button onClick={() => go("album")}>Album</button>
+                <button onClick={() => go("boutique")}>Boutique</button>
                 <button onClick={() => go("connexion", "signup")}>Adhérer</button>
               </div>
               <div>

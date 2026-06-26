@@ -62,3 +62,23 @@ export const STATS = [
   ["2€", "tarif exposant"],
   ["35", "Ille-et-Vilaine"],
 ];
+
+export const SIZES = ["S", "M", "L", "XL", "XXL"];
+
+export const PRODUCTS = [
+  { cat: "T-shirt",          name: "Ermine",      color: "Noir",  colorKey: "noir",  type: "tshirt", prix: 25 },
+  { cat: "T-shirt",          name: "Gwenn ha Du", color: "Blanc", colorKey: "blanc", type: "tshirt", prix: 25 },
+  { cat: "Sweat à capuche",  name: "BCC Classic", color: "Noir",  colorKey: "noir",  type: "hoodie", prix: 45 },
+  { cat: "Sweat à capuche",  name: "By Night",    color: "Noir",  colorKey: "noir",  type: "hoodie", prix: 49 },
+];
+
+export const mailtoMerch = (p, size) =>
+  `mailto:${MAIL}?subject=${encodeURIComponent(
+    "Commande boutique — " + p.cat + " " + p.name
+  )}&body=${encodeURIComponent(
+    `Bonjour,\n\nJe souhaite commander :\n` +
+      `- ${p.cat} "${p.name}" (${p.color})\n` +
+      `- Taille : ${size || "à préciser"}\n` +
+      `- Prix : ${p.prix} €\n\n` +
+      `Merci !`
+  )}`;
